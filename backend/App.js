@@ -1,12 +1,18 @@
 // backend/app.js
 import express from 'express';
 import dotenv from 'dotenv';
+import connectDB from './database.js';
+
+
 
 // Load environment variables from .env file
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+// Connect to MongoDB
+connectDB();
 
 // Middleware to parse JSON requests
 app.use(express.json());
@@ -37,3 +43,5 @@ app.post('/shield', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
+
+
