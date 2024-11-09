@@ -8,7 +8,7 @@ aztec/log/
 aztec/bin/
 
 # Environment variables
-.env
+backend/.env
 
 # Docker internal configuration folder
 .docker/
